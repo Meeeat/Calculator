@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.util.TreeMap;
 
 public class Calc {
@@ -20,6 +21,7 @@ public class Calc {
     String operator;
 
     boolean isArabic;
+    private Object IOException;
 
     public Calc(String number1, String operator, String number2, boolean isArabic) {
         this.number1 = number1;
@@ -55,13 +57,19 @@ public class Calc {
     }
 
     private int convertToArabic(String input) {
-        String[] dictionary = new String[]{"I", "II", "II", "IV", "V", "VI", "VII", "VIII", "IX", "X"};
+        String[] dictionary = new String[]{"I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"};
+        int output;
         for (int i = 0; i < 10; i++) {
             if (input.equals(dictionary[i])) {
+                //output = i + 1;
                 return i + 1;
             }
         }
-        return (int) Integer.parseInt(input);
+        //return (int) Integer.parseInt(input);
+            if ((int) Integer.parseInt(input) > 10 || (int) Integer.parseInt(input) < 1) {
+                throw new ArithmeticException("error");
+            }
+            return (int) Integer.parseInt(input);
     }
 
     private String convertToRomanic(int input) {

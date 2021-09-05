@@ -13,7 +13,7 @@ public class Main {
     }
 
     public static void processor(String input) {
-        String regex = "^(\\S+)([+*/\\-])(\\S+)";
+        String regex = "^([0-9A-Z_ ]+)([+*/\\-])([0-9A-Z_ ]+)";
         String regexGroup1 = input.replaceAll(regex, "$1").trim();
         String regexGroup2 = input.replaceAll(regex, "$2").trim();
         String regexGroup3 = input.replaceAll(regex, "$3").trim();
