@@ -1,4 +1,4 @@
-import java.io.IOException;
+
 import java.util.TreeMap;
 
 public class Calc {
@@ -21,7 +21,7 @@ public class Calc {
     String operator;
 
     boolean isArabic;
-    private Object IOException;
+    //private Object IOException;
 
     public Calc(String number1, String operator, String number2, boolean isArabic) {
         this.number1 = number1;
@@ -45,7 +45,6 @@ public class Calc {
         if (operator.equals("/")) {
             return selector(n1 / n2);
         }
-
         return null;
     }
 
@@ -58,7 +57,7 @@ public class Calc {
 
     private int convertToArabic(String input) {
         String[] dictionary = new String[]{"I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"};
-        int output;
+        //int output;
         for (int i = 0; i < 10; i++) {
             if (input.equals(dictionary[i])) {
                 //output = i + 1;
